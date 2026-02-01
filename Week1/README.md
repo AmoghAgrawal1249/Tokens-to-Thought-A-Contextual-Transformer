@@ -1,43 +1,78 @@
-## Week-1 Assignments
+# Week 1: Python Scientific Computing Fundamentals
 
-1.NumPy assignment: You will be given a series of tasks to complete in the NumPy_Assignment.py file. Each task will involve using Numpy functions to perform specific operations on the given data. Read the comments in the script for instructions on each task.  
-2.Matplotlib and pandas: You are given three exercises which will warmup you plotting skills.  
-3.Gradient descent:In this task, you are given a mathematical function, and your goal is to find its minimum using the gradient descent optimization algorithm. Gradient descent is an iterative optimization algorithm commonly used for finding the minimum of a function.  
+**Author:** Amogh Agrawal (Roll No. 24b1092)
 
-## Week-1 Resources
+---
 
-## Python Basics
+## Overview
 
-Throughout this course, you will primarily use Python for coding. While an in-depth knowledge of the language is not required, understanding basic data types, data structures, loops, functions, and file operations will be helpful. Here are some resources to help you with Python basics:
+This week focused on building a strong foundation with Python's scientific computing libraries. I worked through exercises in NumPy array manipulation, data visualization with Matplotlib/Pandas, and implemented multivariate gradient descent from scratch.
 
-- [W3Schools Python Tutorial](https://www.w3schools.com/python/) (I feel this as the best one)
-- [Python Basics Video](https://youtu.be/kqtD5dpn9C8?feature=shared)
-- [Python Basics Playlist](https://youtube.com/playlist?list=PLzMcBGfZo4-mFu00qxl0a67RhjjZj3jXm&feature=shared)
+## Completed Assignments
 
-## Colab Notebooks
+### 1. NumPy Assignment (`NumPy_Assignment.ipynb`)
 
-In this course, we'll use Colab Jupyter Notebooks for coding exercises. Colab allows you to write and run code in separate cells, facilitating easier debugging. It's a hosted Jupyter notebook service with free access to computing resources, including GPUs and TPUs. Learn the basics of Colab with this [introduction guide](https://youtu.be/iMlMfrXJYSg?feature=shared).
+Practiced core NumPy operations including:
+- **Array initialization** using `reshape`, `zeros`, `ones`, `full`, and `broadcast_to`
+- **Random number generation** with the modern `np.random.default_rng()` API for reproducibility
+- **Transposition and reshaping** using `swapaxes` and `ravel` for flexible axis manipulation
+- **Slicing and indexing** with explicit ranges and `np.ix_` for advanced selection
+- **Broadcasting** with in-place operations (`np.add`, `np.multiply` with `out=`)
+- **Vectorization benchmark** demonstrating 100x+ speedup over nested loops
 
-## NumPy Basics
+Key takeaway: Always prefer vectorized operations over Python loops when working with arrays.
 
-NumPy (Numerical Python) is a fundamental library for linear algebra in Python. It plays a crucial role in AI/ML and data science by enabling efficient mathematical and logical operations on arrays. Explore NumPy through the following resources:
+### 2. Matplotlib & Pandas (`Matplotlib_and_pandas.ipynb`)
 
-- [NumPy W3Schools Tutorial](https://www.w3schools.com/python/numpy/default.asp) (I feel this as the best one)
+Completed three visualization exercises using sales data:
+
+| Exercise | Description | Techniques Used |
+|----------|-------------|-----------------|
+| 1 | Total profit line plot | Dotted lines, circle markers, legend positioning |
+| 2 | Multi-product sales comparison | Colormap iteration, grid overlay, multi-column legend |
+| 3 | Annual sales pie chart | Percentage + absolute labels, explode effect, equal aspect |
+
+### 3. Multivariate Gradient Descent (`Multivariate_Gradient_Descent.ipynb`)
+
+Implemented gradient descent to find minima of:
+
+$$f(x, y) = x^4 + x^2y^2 - y^2 + y^4 + 6$$
+
+Features of my implementation:
+- Clean `objective()` and `gradient()` function separation
+- Configurable learning rate, tolerance, and max iterations
+- **Backtracking line search** — halves step size when objective increases
+- Trajectory logging for visualization
+- Returns comprehensive result dictionary with final point, value, iterations, and gradient norm
+
+## Files in This Directory
+
+```
+Week1/
+├── NumPy_Assignment.ipynb        # NumPy exercises with solutions
+├── Matplotlib_and_pandas.ipynb   # Visualization exercises
+├── Multivariate_Gradient_Descent.ipynb  # Gradient descent implementation
+├── company_sales_data.csv        # Dataset for plotting exercises
+└── README.md                     # This file
+```
+
+## How to Run
+
+```bash
+# Option 1: Google Colab (recommended)
+# Upload notebooks to Colab and run cells sequentially
+
+# Option 2: Local Jupyter
+pip install numpy matplotlib pandas
+jupyter notebook NumPy_Assignment.ipynb
+```
+
+## Resources I Found Helpful
+
 - [NumPy Quickstart Tutorial](https://numpy.org/doc/stable/user/quickstart.html)
-- [NumPy Video Tutorial](https://youtu.be/QUT1VHiLmmI?feature=shared)
+- [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html) — great for finding plot types
+- [3Blue1Brown: Gradient Descent](https://www.youtube.com/watch?v=IHZwWFHWa-w)
 
-## Matplotlib
+---
 
-Matplotlib is Python's essential plotting library, widely used for data visualization. It supports various types of plots and is the foundation for other visualization packages like pandas and Seaborn. Get familiar with Matplotlib through these resources:
-
-- [Matplotlib W3Schools Intro](https://www.w3schools.com/python/matplotlib_intro.asp) (I feel this as the best one)
-- [Matplotlib Documentation](https://matplotlib.org/)
-- [Matplotlib Video Tutorial](https://youtu.be/OZOOLe2imFo?feature=shared)
-
-## Pandas
-
-Pandas is a Python library used for working with datasets. It is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool. Pandas has data structures for data analysis. The most commonly used data structures are Series and DataFrame. Series is one-dimensional. It consists of one column. DataFrame is two dimensional. It consists of rows and columns. For basic introduction use the following guide:
-
-- [W3Schools Pandas Tutorial](https://www.w3schools.com/python/pandas/default.asp) (I feel this as the best one)
-- [Pandas Documentation](https://pandas.pydata.org/)
-- [Pandas Video Tutorial](https://youtu.be/vmEHCJofslg?feature=shared)
+*Completed: Week 1 of Tokens-to-Thought course*
